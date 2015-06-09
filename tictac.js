@@ -19,11 +19,11 @@ var tictactoe = (function() {
     displayMessage( 'Current Player: ' + curPlayer );
   };
 
-  var isValidMove = function( index ) {
+  var validMove = function( index ) {
     if ( board[ index ] === BLANK ) {
       return true;
     } else {
-      displayMessage( 'Select a blank board position' );
+      displayMessage( 'Uh Oh' );
       return false;
     }
   };
@@ -36,7 +36,7 @@ var tictactoe = (function() {
 
   // Check if the game is over. If a player has won, return the 3 squares
   // on which the win occurred as an array. If the game is a draw, return
-  // true; if the game is not over, return false
+  // true; if not return false
   var gameOver = function() {
     var winCombinations = [ [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], 
                             [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6] ],
@@ -71,9 +71,9 @@ var tictactoe = (function() {
   var endGame = function( endFormation ) {
     var endMessage;
 
-    if(endFormation === false){
+    if(endForm === false){
       endMessage = 'Game Over.  Player ' + curPlayer + ' Wins';
-      showWinFormation( endFormation );
+      showWinForm( endForm );
       console.log("test1")
     } else {
       endMessage = 'Game Over.  Draw Game';
@@ -90,7 +90,7 @@ var tictactoe = (function() {
   };
 
   // Add a class to highlight the squares that form a winning formation
-  var showWinFormation = function( formation ) {
+  var showWinForm = function( formation ) {
     $.each( formation, function( index, winPosition ) {
       $( '.square' ).eq( winPosition ).addClass(' winning-square ');
     });
@@ -100,11 +100,11 @@ var tictactoe = (function() {
   var play = function( $square ) {
     var index = +$square.attr( 'id' );
 
-    if( isValidMove( index ) ){
+    if( validMove( index ) ){
       makeMove( $square, index );
-      var winningFormation = gameOver();
-      console.log(winningFormation);
-      ( winningFormation ) ? endGame( winningFormation ) : switchPlayer();
+      var winningForm = gameOver();
+      console.log(winningForm);
+      ( winningForm ) ? endGame( winningForm ) : switchPlayer();
     }
   };
 
