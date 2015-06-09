@@ -1,0 +1,98 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  color: #6B717E;
+}
+/* HTML5 display-role reset for older browsers */
+header {
+  display: block;
+}
+body {
+  line-height: 1;
+  background-color: #FFE8E1;
+  color: #6B717E;
+}
+input[type="text"] {
+color: 495159;
+text-align: center;
+width: 50%;
+border: solid 1px #dcdcdc;
+transition: box-shadow 0.3s, border 0.3s;
+padding-bottom: 10px;
+margin-bottom: 10px;
+}
+input[type="text"]:focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+.container {
+  width: 390px;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+}
+
+/* Header */
+header h1 {
+  font: 50px helvetica;
+  padding: 10px;
+}
+
+/* Message */
+.message {
+  padding: 10px;
+  font-size: 18px;
+}
+.end-message {
+  font-size: 26px;
+  color: #6B717E;
+}
+.play-again {
+  padding: 10px 20px;
+  width: 100%;
+  font-size: 26px;
+  border: 1px solid black
+  background-color: #EFAAC4;
+  background:         linear-gradient(#EFAAC4);
+          border-radius: 5px;
+  display: none;
+}
+.play-again:hover {
+  background-color: #5A716A;
+  background:         linear-gradient(#6bb565, #5A716A;);
+  transition: all .5s ease;
+}
+
+/* Gameboard */
+.gameboard {
+
+  overflow: hidden;
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
+}
+ .gameboard div:hover {
+  background-color:#AD7A99;
+  transition: all .5s ease;
+}
+
+.gameboard div {
+  background-color: #FFC4D1;
+  width: 130px;
+  height: 130px;
+  float: left;
+  font-size: 80px;
+  line-height: 130px;
+}
+.r-border {
+  border-right: 2px solid #333;
+}
+.b-border {
+  border-bottom: 2px solid #333;
+}
+.winning-square {
+  color: #5A716A;
+}
